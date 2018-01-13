@@ -189,6 +189,10 @@ public class JPQLQueryHelper
                 {
                     str.append(" <> ");
                 }
+                else if (dyExpr.getOperator() == Expression.OP_CONTAINS)
+            {
+                str.append(" =~ ");
+            }
                 else
                 {
                     // TODO Support other operators
