@@ -226,6 +226,10 @@ public class JDOQLQueryHelper
             {
                 // Processed above
             }
+            else if (dyExpr.getOperator() == Expression.OP_CONTAINS)
+                {
+                    str.append(" =~ ");
+                }
             else
             {
                 // TODO Support other operators
