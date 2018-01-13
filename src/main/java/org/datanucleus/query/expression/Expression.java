@@ -216,6 +216,8 @@ public abstract class Expression implements Serializable
     public static final MonadicOperator OP_COM = new MonadicOperator("~", 6);
     /** DISTINCT **/
     public static final MonadicOperator OP_DISTINCT = new MonadicOperator("DISTINCT", 6);
+    /** CONTAINS **/
+    public static final DyadicOperator OP_CONTAINS = new DyadicOperator("=~", 3, false);
 
     /**
      * Constructor.
