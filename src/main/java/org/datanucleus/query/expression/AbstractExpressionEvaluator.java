@@ -169,6 +169,10 @@ public class AbstractExpressionEvaluator implements ExpressionEvaluator
         {
             return processDistinctExpression(expr);
         }
+        else if (expr.getOperator() == Expression.OP_CONTAINS)
+        {
+            return processContainsExpression(expr);
+        }
         return compilePrimaryExpression(expr);
     }
 
@@ -580,5 +584,15 @@ public class AbstractExpressionEvaluator implements ExpressionEvaluator
     protected Object processLiteral(Literal expr)
     {
         throw new NucleusException("Literals are not supported by this mapper");
+    }
+    /**
+     * Method to process the supplied CONTAINS expression.
+     * To be implemented by subclasses.
+     * @param expr The expression
+     * @return The result
+     */
+    protected Object processContainsExpression(Expression expr)
+    {
+        throw new NucleusException("Operation CONTAINS is not supported by this mapper");
     }
 }
